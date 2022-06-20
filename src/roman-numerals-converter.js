@@ -1,11 +1,11 @@
-const NUM_MAP = new Map();
-NUM_MAP.set('M', 1000);
-NUM_MAP.set('D', 500);
-NUM_MAP.set('C', 100);
-NUM_MAP.set('L', 50);
-NUM_MAP.set('X', 10);
-NUM_MAP.set('V', 5);
-NUM_MAP.set('I', 1);
+const NUM_MAP = new Map()
+  .set('M', 1000) // keep in DSC order
+  .set('D', 500)
+  .set('C', 100)
+  .set('L', 50)
+  .set('X', 10)
+  .set('V', 5)
+  .set('I', 1);
 
 /**
  * TODO
@@ -30,28 +30,38 @@ function romanToDecimal(romanNum) {
 
 /**
  * Converts given decimal number to Roman numeral.
- * 
  * @param {number} decimalNum 
  * @returns {string} Roman numeral for given decimal number
  */
 function decimalToRoman(decimalNum) {
   let romanNum = '';
-  if (checkDecimal) {
+  if (checkDecimalNum(decimalNum)) {
+    /*
+    NUM_MAP
     while (decimalNum !== 0) {
       for ()
     }
+    */
   }
 
   return romanNum;
 }
 
 /**
+ * TODO
+ * @param {string} romanlNum 
+ * @returns {boolean} whether Roman numeral is legit or not
+ */
+function checkRomanNum(romanlNum) {
+  return true;
+}
+
+/**
  * Checks if given decimal number can be converted to Roman numerals.
- * 
  * @param {number} decimalNum 
  * @returns {boolean} whether decimal number is legit or not
  */
-function checkDecimal(decimalNum) {
+function checkDecimalNum(decimalNum) {
   if (!Number.isInteger(decimalNum)) {
     throw Error('Number must be an integer.');
   }
