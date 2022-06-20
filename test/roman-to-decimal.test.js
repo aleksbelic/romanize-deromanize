@@ -1,4 +1,4 @@
-import { romanToDecimal } from './roman-numerals-converter'
+const { romanToDecimal } = require('../src/roman-numerals-converter')
 
 test('Basic Roman Numerals', () => {
   expect(romanToDecimal('I')).toBe(1);
