@@ -1,0 +1,31 @@
+{
+  "name": "roman-numerals-converter",
+  "version": "1.0.0",
+  "description": "JavaScript Roman numerals converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksbelic/roman-numerals-converter.git"
+  },
+  "keywords": [
+    "roman",
+    "numerals",
+    "numbers",
+    "converter"
+  ],
+  "author": "Aleksandar Belic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksbelic/roman-numerals-converter/issues"
+  },
+  "homepage": "https://github.com/aleksbelic/roman-numerals-converter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1",
+    "jest": "^28.1.1"
+  }
+}
