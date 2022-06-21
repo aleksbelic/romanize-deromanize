@@ -1,5 +1,13 @@
 const { decimalToRoman } = require('../src/roman-numerals-converter')
 
+test('Basic decimal numbers', () => {
+  expect(decimalToRoman(1)).toBe('I');
+  expect(decimalToRoman(2)).toBe('II');
+  expect(decimalToRoman(3)).toBe('III');
+  expect(decimalToRoman(4)).toBe('IV');
+  expect(decimalToRoman(5)).toBe('V');
+});
+
 test('Number is not an intiger', () => {
   expect(() => {
     decimalToRoman(1.45);

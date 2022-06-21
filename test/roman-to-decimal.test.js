@@ -1,6 +1,6 @@
 const { romanToDecimal } = require('../src/roman-numerals-converter')
 
-test('Basic Roman Numerals', () => {
+test('Basic Roman numerals', () => {
   expect(romanToDecimal('I')).toBe(1);
   expect(romanToDecimal('V')).toBe(5);
   expect(romanToDecimal('X')).toBe(10);
@@ -10,7 +10,7 @@ test('Basic Roman Numerals', () => {
   expect(romanToDecimal('M')).toBe(1000);
 });
 
-test('Roman Numerals lower case', () => {
+test('Roman numerals lower case', () => {
   expect(romanToDecimal('i')).toBe(1);
 });
 

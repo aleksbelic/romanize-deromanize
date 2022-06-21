@@ -2,7 +2,8 @@
   "name": "roman-numerals-converter",
   "version": "1.0.0",
   "description": "JavaScript Roman numerals converter",
-  "main": "index.js",
+  "type": "module",
+  "main": "./src/roman-numerals-converter.js",
   "scripts": {
     "test": "jest"
   },
@@ -11,7 +12,7 @@
     "url": "git+https://github.com/aleksbelic/roman-numerals-converter.git"
   },
   "keywords": [
-    "roman",
+    "Roman",
     "numerals",
     "numbers",
     "converter"
