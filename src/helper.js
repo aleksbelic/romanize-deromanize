@@ -3,7 +3,7 @@
  * @param {string} romanlNum 
  * @returns {boolean} whether Roman numeral is legit or not
  */
-function checkRomanNum(romanlNum) {
+const checkRomanNum = (romanlNum) => {
   return true;
 }
 
@@ -12,7 +12,7 @@ function checkRomanNum(romanlNum) {
  * @param {number} decimalNum 
  * @returns {boolean} whether decimal number is legit or not
  */
-function checkDecimalNum(decimalNum) {
+const checkDecimalNum = (decimalNum) => {
   if (!Number.isInteger(decimalNum)) {
     throw Error('Number must be an integer.');
   }
@@ -25,7 +25,33 @@ function checkDecimalNum(decimalNum) {
   return true;
 }
 
+/**
+ * //TODO
+ * @param {Map} unsortedMap 
+ * @param {string} sortType 
+ * @returns {Map} new Map object sorted by values
+ */
+const sortMap = (unsortedMap, sortType = 'asc') => {
+  if (typeof unsortedMap !== 'Map') {
+    throw Error('Please provide map.')
+  }
+  if (sortType === 'asc') {
+    return new Map([...unsortedMap.entries()].sort((a, b) => {
+      return a[1] - b[1];
+    }));
+  }
+  else if (sortType === 'dsc') {
+    return new Map([...unsortedMap.entries()].sort((a, b) => {
+      return a[1] + b[1];
+    }));
+  }
+  else {
+    throw Error('Sort type unknown, please use "asc" or "dsc".')
+  }
+}
+
 module.exports = {
   checkRomanNum,
-  checkDecimalNum
+  checkDecimalNum,
+  sortMap
 }
