@@ -14,7 +14,7 @@ test('Roman numerals lower case', () => {
   expect(romanToDecimal('i')).toBe(1);
 });
 
-test('Custom', () => {
+test('Random Roman numerals', () => {
   expect(romanToDecimal('LXIX')).toBe(69);
   expect(romanToDecimal('MCMLXXXIV')).toBe(1984);
   expect(romanToDecimal('MMCLVIII')).toBe(2158);

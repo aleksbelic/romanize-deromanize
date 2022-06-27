@@ -1,17 +1,23 @@
 const { checkRomanNum, checkDecimalNum, sortMap } = require('./helper');
 
 const NUM_MAP = new Map()
-  .set('M', 1000)
+  .set('M', 1000) // keep in DSC order
+  .set('CM', 900)
   .set('D', 500)
+  .set('CD', 400)
   .set('C', 100)
+  .set('XC', 90)
   .set('L', 50)
+  .set('XL', 40)
   .set('X', 10)
+  .set('IX', 9)
   .set('V', 5)
+  .set('IV', 4)
   .set('I', 1);
 
 /**
  * Converts given Roman numeral to decimal number.
- * @param {string} romanNum 
+ * @param {string} romanNum Roman numeral that needs to be converted to decimal number
  * @returns {number} decimal number for given Roman numeral
  */
 const romanToDecimal = (romanNum) => {
@@ -32,7 +38,7 @@ const romanToDecimal = (romanNum) => {
 
 /**
  * Converts given decimal number to Roman numeral.
- * @param {number} decimalNum 
+ * @param {number} decimalNum decimal number that needs to be converted to Roman numeral 
  * @returns {string} Roman numeral for given decimal number
  */
 const decimalToRoman = (decimalNum) => {
@@ -43,21 +49,11 @@ const decimalToRoman = (decimalNum) => {
     for (const [numMapRoman, numMapDecimal] of NUM_MAP) {
       if (decimalNum === 0) break;
 
-      let decimalRatioFloor = Math.floor(decimalNum / numMapDecimal);
-
-      if (decimalRatioFloor !== 0) {
-
-        if (decimalRatioFloor > 3) {
-          let lastRomanNumeral = romanNum.charAt(-1);
-          console.log(lastRomanNumeral);
-        }
-
-        romanNum += numMapRoman.repeat(decimalRatioFloor);
-        decimalNum -= decimalRatioFloor * numMapDecimal;
+      while (decimalNum >= numMapDecimal) {
+        romanNum += numMapRoman;
+        decimalNum -= numMapDecimal;
       }
-
     }
-
 
   }
 

@@ -1,9 +1,9 @@
 /**
  * TODO
- * @param {string} romanlNum 
+ * @param {string} romanNum 
  * @returns {boolean} whether Roman numeral is legit or not
  */
-const checkRomanNum = (romanlNum) => {
+const checkRomanNum = (romanNum) => {
   return true;
 }
 
@@ -32,7 +32,7 @@ const checkDecimalNum = (decimalNum) => {
  * @returns {Map} new Map object sorted by values
  */
 const sortMap = (unsortedMap, sortType = 'asc') => {
-  if (typeof unsortedMap !== 'Map') {
+  if (!unsortedMap instanceof Map) {
     throw Error('Please provide map.')
   }
   if (sortType === 'asc') {
