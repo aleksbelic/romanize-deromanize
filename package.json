@@ -1,28 +1,32 @@
 {
-  "name": "roman-numerals-converter",
+  "name": "romanize-deromanize",
   "version": "1.0.0",
-  "description": "JavaScript Roman numerals converter",
+  "description": "Convert roman numbers to arabic and via versa with ease.",
   "type": "module",
-  "main": "./src/roman-numerals-converter.js",
+  "main": "./src/romanize-deromanize.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aleksbelic/roman-numerals-converter.git"
+    "url": "git+https://github.com/aleksbelic/romanize-deromanize.git"
   },
   "keywords": [
     "Roman",
     "numerals",
     "numbers",
-    "converter"
+    "converter",
+    "arabic",
+    "decimal",
+    "romanize",
+    "deromanize"
   ],
   "author": "Aleksandar Belic",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aleksbelic/roman-numerals-converter/issues"
+    "url": "https://github.com/aleksbelic/romanize-deromanize/issues"
   },
-  "homepage": "https://github.com/aleksbelic/roman-numerals-converter#readme",
+  "homepage": "https://github.com/aleksbelic/romanize-deromanize#readme",
   "devDependencies": {
     "jest": "^28.1.1"
   },
