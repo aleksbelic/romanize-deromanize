@@ -10,7 +10,12 @@ const { checkRomanNum, checkArabiclNum, NUM_MAP } = require('./helper');
  */
 const romanToArabic = (romanNum) => {
   let arabicNum = 0;
-  let romanNumCharArray = romanNum.toUpperCase().split('');
+  let romanNumCharArray = romanNum
+    .replace(/\s+/g, '')
+    .toUpperCase()
+    .split('');
+
+  // if (checkRomanNum(romanNum)) {} TODO
 
   romanNumCharArray.forEach((romanNumChar, index) => {
     if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {

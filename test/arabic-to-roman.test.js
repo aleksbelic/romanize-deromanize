@@ -16,34 +16,20 @@ test('Basic rules', () => {
   expect(arabicToRoman(1000)).toBe('M');
 });
 
-test('Given number is not an intiger', () => {
-  expect(() => {
-    arabicToRoman('   ');
-  }).toThrowError('Number must be an integer.');
-  expect(() => {
-    arabicToRoman(1.45);
-  }).toThrowError('Number must be an integer.');
-  expect(() => {
-    arabicToRoman('33');
-  }).toThrowError('Number must be an integer.');
-  expect(() => {
-    arabicToRoman('abc');
-  }).toThrowError('Number must be an integer.');
+test('Arabic number is not an intiger', () => {
+  expect(() => arabicToRoman('   ')).toThrowError('Number must be an integer.');
+  expect(() => arabicToRoman(1.45)).toThrowError('Number must be an integer.');
+  expect(() => arabicToRoman('33')).toThrowError('Number must be an integer.');
+  expect(() => arabicToRoman('abc')).toThrowError('Number must be an integer.');
 });
 
-test('Given number is not positive', () => {
-  expect(() => {
-    arabicToRoman(0);
-  }).toThrowError('Number must be positive.');
-  expect(() => {
-    arabicToRoman(-5);
-  }).toThrowError('Number must be positive.');
+test('Arabic number is not positive', () => {
+  expect(() => arabicToRoman(0)).toThrowError('Number must be positive.');
+  expect(() => arabicToRoman(-5)).toThrowError('Number must be positive.');
 });
 
-test('Given number is greater than 3999', () => {
-  expect(() => {
-    arabicToRoman(4000);
-  }).toThrowError('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
+test('Arabic number is greater than 3999', () => {
+  expect(() => arabicToRoman(4000)).toThrowError('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
 });
 
 test('Random arabic numbers', () => {

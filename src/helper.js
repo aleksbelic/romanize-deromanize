@@ -1,22 +1,24 @@
-const NUM_MAP = new Map()
-  .set('M', 1000) // keep in DSC order
-  .set('CM', 900)
-  .set('D', 500)
-  .set('CD', 400)
-  .set('C', 100)
-  .set('XC', 90)
-  .set('L', 50)
-  .set('XL', 40)
-  .set('X', 10)
-  .set('IX', 9)
-  .set('V', 5)
-  .set('IV', 4)
-  .set('I', 1);
+const NUM_MAP = new Map([
+  ['M', 1000], // keep in DSC order
+  ['CM', 900],
+  ['D', 500],
+  ['CD', 400],
+  ['C', 100],
+  ['XC', 90],
+  ['L', 50],
+  ['XL', 40],
+  ['X', 10],
+  ['IX', 9],
+  ['V', 5],
+  ['IV', 4],
+  ['I', 1]]
+);
 
 /**
  * Checks if given Roman number can be converted to arabic number
  * @param {string} romanNum 
  * @returns {boolean} whether roman number is legit or not
+ * @throws will throw an error if the param is invalid
  */
 const checkRomanNum = (romanNum) => {
   return true;
@@ -26,6 +28,7 @@ const checkRomanNum = (romanNum) => {
  * Checks if given arabic number can be converted to roman number
  * @param {number} arabiclNum 
  * @returns {boolean} whether given arabic number is legit or not
+ * @throws will throw an error if the param is invalid
  */
 const checkArabiclNum = (arabiclNum) => {
   if (!Number.isInteger(arabiclNum)) {
@@ -41,27 +44,28 @@ const checkArabiclNum = (arabiclNum) => {
 }
 
 /**
- * //TODO
- * @param {Map} unsortedMap 
- * @param {string} sortType 
+ * Uses an existing, unsorted Map object to create new one - sorted by value for given sort type.
+ * @param {Map} unsortedMap given Map object that should be sorted by value
+ * @param {string} sortType sort type, can be 'asc' for ascending (default) and 'dsc' for descending; case-insensitive
  * @returns {Map} new Map object sorted by values
+ * @throws will throw an error if the params are invalid
  */
 const sortMap = (unsortedMap, sortType = 'asc') => {
-  if (!unsortedMap instanceof Map) {
-    throw Error('Please provide map.')
+  if (!(unsortedMap instanceof Map)) {
+    throw Error('Please provide Map object.')
   }
-  if (sortType === 'asc') {
+  if (sortType.toLowerCase() === 'asc') {
     return new Map([...unsortedMap.entries()].sort((a, b) => {
       return a[1] - b[1];
     }));
   }
-  else if (sortType === 'dsc') {
+  else if (sortType.toLowerCase() === 'dsc') {
     return new Map([...unsortedMap.entries()].sort((a, b) => {
-      return a[1] + b[1];
+      return b[1] - a[1];
     }));
   }
   else {
-    throw Error('Sort type unknown, please use "asc" or "dsc".')
+    throw Error('Sort type unknown, please use "asc" for ascending or "dsc" for descending.')
   }
 }
 

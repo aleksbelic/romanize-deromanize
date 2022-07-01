@@ -10,9 +10,13 @@ test('Basic roman numerals', () => {
   expect(romanToArabic('M')).toBe(1000);
 });
 
-test('Given roman number is lower case', () => {
+test('Roman number is lower case', () => {
   expect(romanToArabic('i')).toBe(1);
   expect(romanToArabic('xXxIiI')).toBe(33);
+});
+
+test('Roman number contains whitespace', () => {
+  expect(romanToArabic(' M CCC L XXX I X ')).toBe(1389);
 });
 
 test('Random roman numbers', () => {
