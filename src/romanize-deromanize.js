@@ -1,4 +1,4 @@
-const { checkRomanNum, checkArabiclNum, NUM_MAP } = require('./helper');
+const { isValidRomanNum, isValidArabiclNum, NUM_MAP } = require('./helper');
 
 /**
  * Converts given roman number to arabic.
@@ -15,7 +15,7 @@ const romanToArabic = (romanNum) => {
     .toUpperCase()
     .split('');
 
-  // if (checkRomanNum(romanNum)) {} TODO
+  // if (isValidRomanNum(romanNum)) {} TODO
 
   romanNumCharArray.forEach((romanNumChar, index) => {
     if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
@@ -31,7 +31,7 @@ const romanToArabic = (romanNum) => {
 
 /**
  * Converts given arabic number to roman.
- * @param {number} arabicNum arabic number that needs to be converted to roman number 
+ * @param {number|string} arabicNum arabic number that needs to be converted to roman number 
  * @returns {string} roman number for given arabic number
  * @example
  * arabicToRoman(671);
@@ -40,7 +40,7 @@ const romanToArabic = (romanNum) => {
 const arabicToRoman = (arabicNum) => {
   let romanNum = '';
 
-  if (checkArabiclNum(arabicNum)) {
+  if (isValidArabiclNum(arabicNum)) {
 
     for (const [numMapRoman, numMapArabic] of NUM_MAP) {
       if (arabicNum === 0) break;

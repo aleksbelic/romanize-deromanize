@@ -16,21 +16,21 @@ const NUM_MAP = new Map([
 
 /**
  * Checks if given Roman number can be converted to arabic number
- * @param {string} romanNum 
+ * @param {string} romanNum roman number that we're checking
  * @returns {boolean} whether roman number is legit or not
  * @throws will throw an error if the param is invalid
  */
-const checkRomanNum = (romanNum) => {
+const isValidRomanNum = (romanNum) => {
   return true;
 }
 
 /**
  * Checks if given arabic number can be converted to roman number
- * @param {number} arabiclNum 
+ * @param {number} arabiclNum arabic number that we're checking
  * @returns {boolean} whether given arabic number is legit or not
  * @throws will throw an error if the param is invalid
  */
-const checkArabiclNum = (arabiclNum) => {
+const isValidArabiclNum = (arabiclNum) => {
   if (!Number.isInteger(arabiclNum)) {
     throw Error('Number must be an integer.');
   }
@@ -71,7 +71,7 @@ const sortMap = (unsortedMap, sortType = 'asc') => {
 
 module.exports = {
   NUM_MAP,
-  checkRomanNum,
-  checkArabiclNum,
+  isValidRomanNum,
+  isValidArabiclNum,
   sortMap
 }

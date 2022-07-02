@@ -1,19 +1,19 @@
 const { arabicToRoman } = require('../src/romanize-deromanize')
 
 test('Basic rules', () => {
-  expect(arabicToRoman(1)).toBe('I');
-  expect(arabicToRoman(4)).toBe('IV');
-  expect(arabicToRoman(5)).toBe('V');
-  expect(arabicToRoman(9)).toBe('IX');
-  expect(arabicToRoman(10)).toBe('X');
-  expect(arabicToRoman(40)).toBe('XL');
-  expect(arabicToRoman(50)).toBe('L');
-  expect(arabicToRoman(90)).toBe('XC');
-  expect(arabicToRoman(100)).toBe('C');
-  expect(arabicToRoman(400)).toBe('CD');
-  expect(arabicToRoman(500)).toBe('D');
-  expect(arabicToRoman(900)).toBe('CM');
-  expect(arabicToRoman(1000)).toBe('M');
+  expect(arabicToRoman(1)).toEqual('I');
+  expect(arabicToRoman(4)).toEqual('IV');
+  expect(arabicToRoman(5)).toEqual('V');
+  expect(arabicToRoman(9)).toEqual('IX');
+  expect(arabicToRoman(10)).toEqual('X');
+  expect(arabicToRoman(40)).toEqual('XL');
+  expect(arabicToRoman(50)).toEqual('L');
+  expect(arabicToRoman(90)).toEqual('XC');
+  expect(arabicToRoman(100)).toEqual('C');
+  expect(arabicToRoman(400)).toEqual('CD');
+  expect(arabicToRoman(500)).toEqual('D');
+  expect(arabicToRoman(900)).toEqual('CM');
+  expect(arabicToRoman(1000)).toEqual('M');
 });
 
 test('Arabic number is not an intiger', () => {
@@ -33,32 +33,32 @@ test('Arabic number is greater than 3999', () => {
 });
 
 test('Random arabic numbers', () => {
-  expect(arabicToRoman(44)).toBe('XLIV');
-  expect(arabicToRoman(69)).toBe('LXIX');
-  expect(arabicToRoman(99)).toBe('XCIX');
-  expect(arabicToRoman(153)).toBe('CLIII');
-  expect(arabicToRoman(385)).toBe('CCCLXXXV');
-  expect(arabicToRoman(444)).toBe('CDXLIV');
-  expect(arabicToRoman(802)).toBe('DCCCII');
-  expect(arabicToRoman(811)).toBe('DCCCXI');
-  expect(arabicToRoman(999)).toBe('CMXCIX');
-  expect(arabicToRoman(1034)).toBe('MXXXIV');
-  expect(arabicToRoman(1174)).toBe('MCLXXIV');
-  expect(arabicToRoman(1201)).toBe('MCCI');
-  expect(arabicToRoman(1259)).toBe('MCCLIX');
-  expect(arabicToRoman(1310)).toBe('MCCCX');
-  expect(arabicToRoman(1873)).toBe('MDCCCLXXIII');
-  expect(arabicToRoman(1984)).toBe('MCMLXXXIV');
-  expect(arabicToRoman(2109)).toBe('MMCIX');
-  expect(arabicToRoman(2276)).toBe('MMCCLXXVI');
-  expect(arabicToRoman(2292)).toBe('MMCCXCII');
-  expect(arabicToRoman(2386)).toBe('MMCCCLXXXVI');
-  expect(arabicToRoman(2426)).toBe('MMCDXXVI');
-  expect(arabicToRoman(2438)).toBe('MMCDXXXVIII');
-  expect(arabicToRoman(2528)).toBe('MMDXXVIII');
-  expect(arabicToRoman(2748)).toBe('MMDCCXLVIII');
-  expect(arabicToRoman(3100)).toBe('MMMC');
-  expect(arabicToRoman(3129)).toBe('MMMCXXIX');
-  expect(arabicToRoman(3329)).toBe('MMMCCCXXIX');
-  expect(arabicToRoman(3512)).toBe('MMMDXII');
+  expect(arabicToRoman(44)).toEqual('XLIV');
+  expect(arabicToRoman(69)).toEqual('LXIX');
+  expect(arabicToRoman(99)).toEqual('XCIX');
+  expect(arabicToRoman(153)).toEqual('CLIII');
+  expect(arabicToRoman(385)).toEqual('CCCLXXXV');
+  expect(arabicToRoman(444)).toEqual('CDXLIV');
+  expect(arabicToRoman(802)).toEqual('DCCCII');
+  expect(arabicToRoman(811)).toEqual('DCCCXI');
+  expect(arabicToRoman(999)).toEqual('CMXCIX');
+  expect(arabicToRoman(1034)).toEqual('MXXXIV');
+  expect(arabicToRoman(1174)).toEqual('MCLXXIV');
+  expect(arabicToRoman(1201)).toEqual('MCCI');
+  expect(arabicToRoman(1259)).toEqual('MCCLIX');
+  expect(arabicToRoman(1310)).toEqual('MCCCX');
+  expect(arabicToRoman(1873)).toEqual('MDCCCLXXIII');
+  expect(arabicToRoman(1984)).toEqual('MCMLXXXIV');
+  expect(arabicToRoman(2109)).toEqual('MMCIX');
+  expect(arabicToRoman(2276)).toEqual('MMCCLXXVI');
+  expect(arabicToRoman(2292)).toEqual('MMCCXCII');
+  expect(arabicToRoman(2386)).toEqual('MMCCCLXXXVI');
+  expect(arabicToRoman(2426)).toEqual('MMCDXXVI');
+  expect(arabicToRoman(2438)).toEqual('MMCDXXXVIII');
+  expect(arabicToRoman(2528)).toEqual('MMDXXVIII');
+  expect(arabicToRoman(2748)).toEqual('MMDCCXLVIII');
+  expect(arabicToRoman(3100)).toEqual('MMMC');
+  expect(arabicToRoman(3129)).toEqual('MMMCXXIX');
+  expect(arabicToRoman(3329)).toEqual('MMMCCCXXIX');
+  expect(arabicToRoman(3512)).toEqual('MMMDXII');
 });
