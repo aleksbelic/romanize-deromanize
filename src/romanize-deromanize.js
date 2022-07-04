@@ -1,4 +1,4 @@
-const { isValidRomanNum, isValidArabiclNum, NUM_MAP } = require('./helper');
+const { isValidRomanNum, isValidArabicNum, NUM_MAP } = require('./helper');
 
 /**
  * Converts given roman number to arabic.
@@ -40,7 +40,7 @@ const romanToArabic = (romanNum) => {
 const arabicToRoman = (arabicNum) => {
   let romanNum = '';
 
-  if (isValidArabiclNum(arabicNum)) {
+  if (isValidArabicNum(arabicNum)) {
 
     for (const [numMapRoman, numMapArabic] of NUM_MAP) {
       if (arabicNum === 0) break;

@@ -1,9 +1,9 @@
-# Romanize - deRomanize
+# romanize &harr; deromanize
 
 ## About
 [Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals) are a numeral system that originated in [ancient Rome](https://en.wikipedia.org/wiki/Ancient_Rome) and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.
 
-This javascript module allows you to `convert Roman numbers to arabic and vice versa` with ease.
+This javascript module allows you to `convert roman numbers to arabic and vice versa` with ease.
 
 ## Installation
 Add module to your project dependencies:
