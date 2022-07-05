@@ -16,16 +16,19 @@ test('Basic rules', () => {
   expect(arabicToRoman(1000)).toEqual('M');
 });
 
-test('Arabic number is not an intiger', () => {
-  expect(() => arabicToRoman('   ')).toThrowError('Number must be an integer.');
-  expect(() => arabicToRoman(1.45)).toThrowError('Number must be an integer.');
-  expect(() => arabicToRoman('33')).toThrowError('Number must be an integer.');
-  expect(() => arabicToRoman('abc')).toThrowError('Number must be an integer.');
+test('Arabic number is a string or some other data struct', () => {
+  expect(() => arabicToRoman('   ')).toThrowError('Number must be a positive integer.');
+  expect(() => arabicToRoman('abc')).toThrowError('Number must be a positive integer.');
+  expect(() => arabicToRoman({ a: '1' })).toThrowError('Number must be a positive integer.');
+  expect(() => arabicToRoman([1])).toThrowError('Number must be a positive integer.');
+  expect(arabicToRoman('33')).toEqual('XXXIII');
 });
 
-test('Arabic number is not positive', () => {
-  expect(() => arabicToRoman(0)).toThrowError('Number must be positive.');
-  expect(() => arabicToRoman(-5)).toThrowError('Number must be positive.');
+test('Arabic number is not a positive intiger', () => {
+
+  expect(() => arabicToRoman(1.45)).toThrowError('Number must be a positive integer.');
+  expect(() => arabicToRoman(0)).toThrowError('Number must be a positive integer.');
+  expect(() => arabicToRoman(-5)).toThrowError('Number must be a positive integer.');
 });
 
 test('Arabic number is greater than 3999', () => {

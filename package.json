@@ -11,12 +11,12 @@
     "url": "git+https://github.com/aleksbelic/romanize-deromanize.git"
   },
   "keywords": [
-    "Roman",
+    "roman",
+    "arabic",
     "numerals",
     "numbers",
     "converter",
     "conversion",
-    "arabic",
     "decimal",
     "romanize",
     "deromanize"

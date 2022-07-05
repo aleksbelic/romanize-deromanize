@@ -15,9 +15,9 @@ const NUM_MAP = new Map([
 );
 
 /**
- * Checks if given Roman number can be converted to arabic number
+ * Checks if given roman number can be converted to arabic number
  * @param {string} romanNum roman number that we're checking
- * @returns {boolean} whether roman number is legit or not
+ * @returns {boolean} whether roman number is valid or not
  * @throws will throw an error if the param is invalid
  */
 const isValidRomanNum = (romanNum) => {
@@ -27,19 +27,21 @@ const isValidRomanNum = (romanNum) => {
 /**
  * Checks if given arabic number can be converted to roman number
  * @param {number|string} arabicNum arabic number that we're checking
- * @returns {boolean} whether given arabic number is legit or not
+ * @returns {boolean} whether given arabic number is valid or not
  * @throws will throw an error if the param is invalid
  */
-const isValidArabiclNum = (arabiclNum) => {
-  if (!Number.isInteger(arabiclNum)) {
-    throw Error('Number must be an integer.');
+const isValidArabicNum = (arabicNum) => {
+  if (typeof arabicNum === 'string') {
+    arabicNum = Number(arabicNum);
   }
-  else if (arabicNum <= 0) {
-    throw Error('Number must be positive.');
+
+  if (!Number.isInteger(arabicNum) || arabicNum <= 0) {
+    throw Error('Number must be a positive integer.');
   }
   else if (arabicNum > 3999) {
     throw Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
   }
+
   return true;
 }
 
