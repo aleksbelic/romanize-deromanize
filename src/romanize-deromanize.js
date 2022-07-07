@@ -10,21 +10,21 @@ const { isValidRomanNum, isValidArabicNum, NUM_MAP } = require('./helper');
  */
 const romanToArabic = (romanNum) => {
   let arabicNum = 0;
-  let romanNumCharArray = romanNum
+  romanNum = romanNum
     .replace(/\s+/g, '')
-    .toUpperCase()
-    .split('');
+    .toUpperCase();
 
-  // if (isValidRomanNum(romanNum)) {} TODO
-
-  romanNumCharArray.forEach((romanNumChar, index) => {
-    if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
-      arabicNum -= NUM_MAP.get(romanNumChar);
-    }
-    else {
-      arabicNum += NUM_MAP.get(romanNumChar);
-    }
-  });
+  if (isValidRomanNum(romanNum)) {
+    let romanNumCharArray = Array.from(romanNum);
+    romanNumCharArray.forEach((romanNumChar, index) => {
+      if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
+        arabicNum -= NUM_MAP.get(romanNumChar);
+      }
+      else {
+        arabicNum += NUM_MAP.get(romanNumChar);
+      }
+    });
+  }
 
   return arabicNum;
 }

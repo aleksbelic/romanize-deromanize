@@ -20,8 +20,21 @@ test('Roman number contains whitespace', () => {
 });
 
 test('Random roman numbers', () => {
+  expect(romanToArabic('VII')).toEqual(7);
+  expect(romanToArabic('XXXIV')).toEqual(34);
+  expect(romanToArabic('XXXVII')).toEqual(37);
+  expect(romanToArabic('XLIII')).toEqual(43);
+  expect(romanToArabic('XLVIII')).toEqual(48);
+  expect(romanToArabic('LII')).toEqual(52);
   expect(romanToArabic('LXIX')).toEqual(69);
+  expect(romanToArabic('CXL')).toEqual(140);
+  expect(romanToArabic('CXLV')).toEqual(145);
+  expect(romanToArabic('CCXCVIII')).toEqual(298);
+  expect(romanToArabic('CDI')).toEqual(401);
+  expect(romanToArabic('DCLXVI')).toEqual(666);
   expect(romanToArabic('CMXCIX')).toEqual(999);
   expect(romanToArabic('MCMLXXXIV')).toEqual(1984);
+  expect(romanToArabic('MMLXVI')).toEqual(2066);
   expect(romanToArabic('MMCLVIII')).toEqual(2158);
+  expect(romanToArabic('MMMLXXIV')).toEqual(3074);
 });

@@ -14,6 +14,10 @@ const NUM_MAP = new Map([
   ['I', 1]]
 );
 
+const ROMAN_NUMERALS = Array
+  .from(NUM_MAP.keys())
+  .filter(romanNumeral => romanNumeral.length === 1);
+
 /**
  * Checks if given roman number can be converted to arabic number
  * @param {string} romanNum roman number that we're checking
@@ -73,6 +77,7 @@ const sortMap = (unsortedMap, sortType = 'asc') => {
 
 module.exports = {
   NUM_MAP,
+  ROMAN_NUMERALS,
   isValidRomanNum,
   isValidArabicNum,
   sortMap
