@@ -1,4 +1,4 @@
-const { isValidRomanNum, isValidArabicNum, NUM_MAP } = require('./helper');
+const { isValidRomanNum, NUM_MAP } = require('./helper');
 
 /**
  * Converts given roman number to arabic.
@@ -40,17 +40,24 @@ const romanToArabic = (romanNum) => {
 const arabicToRoman = (arabicNum) => {
   let romanNum = '';
 
-  if (isValidArabicNum(arabicNum)) {
+  if (typeof arabicNum === 'string') {
+    arabicNum = Number(arabicNum);
+  }
 
-    for (const [numMapRoman, numMapArabic] of NUM_MAP) {
-      if (arabicNum === 0) break;
+  if (!Number.isInteger(arabicNum) || arabicNum <= 0) {
+    throw Error('Number must be a positive integer.');
+  }
+  else if (arabicNum > 3999) {
+    throw Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
+  }
 
-      while (arabicNum >= numMapArabic) {
-        romanNum += numMapRoman;
-        arabicNum -= numMapArabic;
-      }
+  for (const [numMapRoman, numMapArabic] of NUM_MAP) {
+    if (arabicNum === 0) break;
+
+    while (arabicNum >= numMapArabic) {
+      romanNum += numMapRoman;
+      arabicNum -= numMapArabic;
     }
-
   }
 
   return romanNum;

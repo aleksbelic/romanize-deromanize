@@ -25,26 +25,23 @@ const ROMAN_NUMERALS = Array
  * @throws will throw an error if the param is invalid
  */
 const isValidRomanNum = (romanNum) => {
-  return true;
-}
+  let romanNumCharArray = Array.from(romanNum);
 
-/**
- * Checks if given arabic number can be converted to roman number
- * @param {number|string} arabicNum arabic number that we're checking
- * @returns {boolean} whether given arabic number is valid or not
- * @throws will throw an error if the param is invalid
- */
-const isValidArabicNum = (arabicNum) => {
-  if (typeof arabicNum === 'string') {
-    arabicNum = Number(arabicNum);
-  }
+  // check for invalid numerals
+  [...new Set(romanNumCharArray)].forEach(romanNumChar => { // only unique array elements
+    if (!ROMAN_NUMERALS.includes(romanNumChar)) {
+      throw new Error('Invalid roman numeral: ' + romanNumChar);
+    }
+  });
 
-  if (!Number.isInteger(arabicNum) || arabicNum <= 0) {
-    throw Error('Number must be a positive integer.');
-  }
-  else if (arabicNum > 3999) {
-    throw Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
-  }
+  // check for more than 3 consecutive identical numerals, e.g. "IIII"
+  let consecutiveRomanCharCount = 0;
+  romanNumCharArray.forEach((romanNumChar, index) => {
+    consecutiveRomanCharCount = (romanNumChar === romanNumCharArray[index - 1]) ? ++consecutiveRomanCharCount : 0;
+    if (consecutiveRomanCharCount >= 3) {
+      throw new Error('Invalid roman number, more than 3 consecutive, identical numerals: ' + romanNumChar);
+    }
+  });
 
   return true;
 }
@@ -79,6 +76,5 @@ module.exports = {
   NUM_MAP,
   ROMAN_NUMERALS,
   isValidRomanNum,
-  isValidArabicNum,
   sortMap
 }

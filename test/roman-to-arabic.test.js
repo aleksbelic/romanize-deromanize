@@ -19,6 +19,15 @@ test('Roman number contains whitespace', () => {
   expect(romanToArabic(' M CCC L XXX I X ')).toEqual(1389);
 });
 
+test('Invalid roman number - unknown numeral', () => {
+  expect(() => romanToArabic('LXAX')).toThrowError('Invalid roman numeral: A');
+});
+
+test('Invalid roman number - more than 3 consecutive identical numerals', () => {
+  expect(() => romanToArabic('IIII')).toThrowError('Invalid roman number, more than 3 consecutive, identical numerals: I');
+  expect(() => romanToArabic('MMCCXXXX')).toThrowError('Invalid roman number, more than 3 consecutive, identical numerals: X');
+});
+
 test('Random roman numbers', () => {
   expect(romanToArabic('VII')).toEqual(7);
   expect(romanToArabic('XXXIV')).toEqual(34);
