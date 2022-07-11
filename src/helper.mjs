@@ -1,4 +1,4 @@
-const NUM_MAP = new Map([
+export const NUM_MAP = new Map([
   ['M', 1000], // keep in DSC order
   ['CM', 900],
   ['D', 500],
@@ -14,7 +14,7 @@ const NUM_MAP = new Map([
   ['I', 1]]
 );
 
-const ROMAN_NUMERALS = Array
+export const ROMAN_NUMERALS = Array
   .from(NUM_MAP.keys())
   .filter(romanNumeral => romanNumeral.length === 1);
 
@@ -24,7 +24,7 @@ const ROMAN_NUMERALS = Array
  * @returns {boolean} whether roman number is valid or not
  * @throws will throw an error if the param is invalid
  */
-const isValidRomanNum = (romanNum) => {
+export const isValidRomanNum = (romanNum) => {
   let romanNumCharArray = Array.from(romanNum);
 
   // check for invalid numerals
@@ -43,6 +43,9 @@ const isValidRomanNum = (romanNum) => {
     }
   });
 
+  // sme da bude ispred većeg do 2 naredna veća stepena TODO
+  // smeju da se ponovi samo 1 ispred većeg TODO
+
   return true;
 }
 
@@ -53,7 +56,7 @@ const isValidRomanNum = (romanNum) => {
  * @returns {Map} new Map object sorted by values
  * @throws will throw an error if the params are invalid
  */
-const sortMap = (unsortedMap, sortType = 'asc') => {
+export const sortMap = (unsortedMap, sortType = 'asc') => {
   if (!(unsortedMap instanceof Map)) {
     throw Error('Please provide Map object.')
   }
@@ -70,11 +73,4 @@ const sortMap = (unsortedMap, sortType = 'asc') => {
   else {
     throw Error('Sort type unknown, please use "asc" for ascending or "dsc" for descending.')
   }
-}
-
-module.exports = {
-  NUM_MAP,
-  ROMAN_NUMERALS,
-  isValidRomanNum,
-  sortMap
 }

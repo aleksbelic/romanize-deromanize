@@ -1,4 +1,4 @@
-const { deromanize } = require('../src/romanize-deromanize');
+import { deromanize } from '../src/romanize-deromanize.mjs';
 
 test('Basic roman numerals', () => {
   expect(deromanize('I')).toEqual(1);

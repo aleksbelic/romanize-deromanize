@@ -1,4 +1,4 @@
-const { isValidRomanNum, NUM_MAP } = require('./helper');
+import { isValidRomanNum, NUM_MAP } from './helper';
 
 /**
  * Converts given arabic number to roman.
@@ -8,7 +8,7 @@ const { isValidRomanNum, NUM_MAP } = require('./helper');
  * romanize(671);
  * // returns 'DCLXXI'
  */
-const romanize = (arabicNum) => {
+export const romanize = (arabicNum) => {
   let romanNum = '';
 
   if (typeof arabicNum === 'string') {
@@ -42,7 +42,7 @@ const romanize = (arabicNum) => {
  * deromanize('CCXIV');
  * // returns 214
  */
-const deromanize = (romanNum) => {
+export const deromanize = (romanNum) => {
   let arabicNum = 0;
   romanNum = romanNum
     .replace(/\s+/g, '')
@@ -61,9 +61,4 @@ const deromanize = (romanNum) => {
   }
 
   return arabicNum;
-}
-
-module.exports = {
-  romanize,
-  deromanize
 }

@@ -2,9 +2,10 @@
   "name": "romanize-deromanize",
   "version": "1.0.0",
   "description": "Convert roman numbers to arabic and via versa with ease.",
-  "main": "./src/romanize-deromanize.js",
+  "main": "./src/romanize-deromanize.mjs",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "repository": {
     "type": "git",
