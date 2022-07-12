@@ -1,4 +1,4 @@
-import { isValidRomanNum, NUM_MAP } from './helper';
+import { isValidRomanNum, NUM_MAP } from './helper.mjs';
 
 /**
  * Converts given arabic number to roman.
