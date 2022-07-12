@@ -23,9 +23,15 @@ test('Invalid roman number - unknown numeral', () => {
   expect(() => deromanize('LXAX')).toThrowError('Invalid roman numeral: A');
 });
 
-test('Invalid roman number - more than 3 consecutive identical numerals', () => {
-  expect(() => deromanize('IIII')).toThrowError('Invalid roman number, more than 3 consecutive, identical numerals: I');
-  expect(() => deromanize('MMCCXXXX')).toThrowError('Invalid roman number, more than 3 consecutive, identical numerals: X');
+test('Invalid roman number - more than 3 successive identical numerals', () => {
+  expect(() => deromanize('IIII')).toThrowError('Invalid roman number, more than 3 successive identical numerals: I');
+  expect(() => deromanize('MMCCXXXX')).toThrowError('Invalid roman number, more than 3 successive identical numerals: X');
+});
+
+test('Invalid roman number - numerals V, L & D can\'t be successively repeated', () => {
+  expect(() => deromanize('VVI')).toThrowError('Invalid roman number: numeral V can\'t be successively repeated');
+  expect(() => deromanize('MDCLL')).toThrowError('Invalid roman number: numeral L can\'t be successively repeated');
+  expect(() => deromanize('MMDDD')).toThrowError('Invalid roman number: numeral D can\'t be successively repeated');
 });
 
 test('Random roman numbers', () => {

@@ -60,17 +60,25 @@ export const isValidRomanNum = (romanNum) => {
     }
   });
 
-  // check for more than 3 consecutive identical numerals, e.g. "IIII"
-  let consecutiveRomanCharCount = 0;
+  // check for more than 3 successive identical numerals, e.g. "IIII"
+  let successiveRomanCharCount = 0;
   romanNumCharArray.forEach((romanNumChar, index) => {
-    consecutiveRomanCharCount = (romanNumChar === romanNumCharArray[index - 1]) ? ++consecutiveRomanCharCount : 0;
-    if (consecutiveRomanCharCount >= 3) {
-      throw new Error('Invalid roman number, more than 3 consecutive, identical numerals: ' + romanNumChar);
+    successiveRomanCharCount = (romanNumChar === romanNumCharArray[index - 1]) ? ++successiveRomanCharCount : 0;
+
+    // V, L, D - can't be successively repeated
+    if (successiveRomanCharCount > 0 && (['V', 'L', 'D'].includes(romanNumChar))) {
+      throw new Error('Invalid roman number: numeral ' + romanNumChar + ' can\'t be successively repeated');
+    }
+
+    if (successiveRomanCharCount >= 3) {
+      throw new Error('Invalid roman number, more than 3 successive identical numerals: ' + romanNumChar);
     }
   });
 
   // sme da bude ispred većeg do 2 naredna veća stepena TODO
+
   // smeju da se ponovi samo 1 ispred većeg TODO
+
 
   return true;
 }
