@@ -1,1 +1,26 @@
-// TODO
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- [Prettier](https://prettier.io/) dev dependency with config & ignore files
+- [ESLint](https://eslint.org/) dev dependency with config file
+- This CHANGELOG markdown
+
+### Changed
+
+- Code formatting based on Prettier predefined rules
+
+## [1.0.0] - 2022-07-15
+
+### Added
+
+- Top priority methods: "romanize" & "deromanize"
+- Helper function "sortMap" & roman numeral mapping
+- [Jest](https://jestjs.io/) dev dependency with 23 tests organised in 3 test suites along with code coverage
