@@ -1,6 +1,6 @@
 {
   "name": "romanize-deromanize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert roman numbers to arabic and via versa with ease.",
   "main": "./src/romanize-deromanize.js",
   "scripts": {
