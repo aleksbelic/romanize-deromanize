@@ -41,7 +41,15 @@ Simply format project files by following predefined rules in `.prettierrc.json`:
 $ npx prettier --write .
 ```
 
-To exclude files from formatting, please refer to `.prettierignore`, which corresponds to `.gitignore`.
+To exclude files from formatting, please refer to `.prettierignore` (corresponds to `.gitignore`).
+
+Identifying problematic patterns is covered by static code analysis tool [ESLint](https://eslint.org/):
+
+```
+$ npx eslint .
+```
+
+Linting config can be found in `.eslintrc.json`.
 
 ## Testing
 
