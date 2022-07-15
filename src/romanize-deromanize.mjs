@@ -1,4 +1,4 @@
-import { isValidRomanNum, NUM_MAP } from './helper.mjs';
+import { NUM_MAP, ROMAN_NUMERALS } from './helper.mjs';
 
 /**
  * Converts given arabic number to roman.
@@ -48,16 +48,26 @@ export const deromanize = (romanNum) => {
     .replace(/\s+/g, '')
     .toUpperCase();
 
-  if (isValidRomanNum(romanNum)) {
-    let romanNumCharArray = Array.from(romanNum);
-    romanNumCharArray.forEach((romanNumChar, index) => {
-      if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
-        arabicNum -= NUM_MAP.get(romanNumChar);
-      }
-      else {
-        arabicNum += NUM_MAP.get(romanNumChar);
-      }
-    });
+  let romanNumCharArray = Array.from(romanNum);
+
+  // check for invalid numerals
+  [...new Set(romanNumCharArray)].forEach(romanNumChar => { // only unique array elements
+    if (!ROMAN_NUMERALS.includes(romanNumChar)) {
+      throw new Error('Invalid roman numeral: ' + romanNumChar);
+    }
+  });
+
+  romanNumCharArray.forEach((romanNumChar, index) => {
+    if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
+      arabicNum -= NUM_MAP.get(romanNumChar);
+    }
+    else {
+      arabicNum += NUM_MAP.get(romanNumChar);
+    }
+  });
+
+  if (romanize(arabicNum) !== romanNum) {
+    throw new Error('Invalid roman number: ' + romanNum);
   }
 
   return arabicNum;

@@ -24,14 +24,20 @@ test('Invalid roman number - unknown numeral', () => {
 });
 
 test('Invalid roman number - more than 3 successive identical numerals', () => {
-  expect(() => deromanize('IIII')).toThrowError('Invalid roman number, more than 3 successive identical numerals: I');
-  expect(() => deromanize('MMCCXXXX')).toThrowError('Invalid roman number, more than 3 successive identical numerals: X');
+  expect(() => deromanize('IIII')).toThrowError('Invalid roman number: IIII');
+  expect(() => deromanize('MMCCXXXX')).toThrowError('Invalid roman number: MMCCXXXX');
 });
 
 test('Invalid roman number - numerals V, L & D can\'t be successively repeated', () => {
-  expect(() => deromanize('VVI')).toThrowError('Invalid roman number: numeral V can\'t be successively repeated');
-  expect(() => deromanize('MDCLL')).toThrowError('Invalid roman number: numeral L can\'t be successively repeated');
-  expect(() => deromanize('MMDDD')).toThrowError('Invalid roman number: numeral D can\'t be successively repeated');
+  expect(() => deromanize('VVI')).toThrowError('Invalid roman number: VVI');
+  expect(() => deromanize('MDCLL')).toThrowError('Invalid roman number: MDCLL');
+  expect(() => deromanize('MMDDD')).toThrowError('Invalid roman number: MMDDD');
+});
+
+test('Invalid roman number: false order of numerals', () => {
+  expect(() => deromanize('XXC')).toThrowError('Invalid roman number: XXC');
+  expect(() => deromanize('CCCD')).toThrowError('Invalid roman number: CCCD');
+  expect(() => deromanize('CMCM')).toThrowError('Invalid roman number: CMCM');
 });
 
 test('Random roman numbers', () => {

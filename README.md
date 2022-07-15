@@ -14,11 +14,11 @@ $ npm install romanize-deromanize
 ## Usage
 Simply use the following two methods:
 ```
-romanToArabic('CCXIV'); // returns 214
+romanize('CCXIV'); // returns 214
 ```
 and
 ```
-arabicToRoman(671); // returns 'DCLXXI'
+deromanize(671); // returns 'DCLXXI'
 ```
 
 ## Testing
@@ -28,7 +28,7 @@ $ npm t
 ```
 or just run a single test suite by specifying its name, e.g.:
 ```
-$ npm t arabic-to-roman
+$ npm t romanize.test.js
 ```
 
 ## References
