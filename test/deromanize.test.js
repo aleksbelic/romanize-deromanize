@@ -10,6 +10,10 @@ test('Basic roman numerals', () => {
   expect(deromanize('M')).toEqual(1000);
 });
 
+test('Roman number is not a string', () => {
+  expect(() => deromanize(39)).toThrowError('Invalid roman numeral: 3');
+});
+
 test('Roman number is lower case', () => {
   expect(deromanize('i')).toEqual(1);
   expect(deromanize('xXxIiI')).toEqual(33);

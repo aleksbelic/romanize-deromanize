@@ -8,7 +8,7 @@ const { NUM_MAP, ROMAN_NUMERALS } = require('./helper.js');
  * romanize(671);
  * // returns 'DCLXXI'
  */
-export const romanize = (arabicNum) => {
+const romanize = (arabicNum) => {
   let romanNum = '';
 
   if (typeof arabicNum === 'string') {
@@ -42,9 +42,10 @@ export const romanize = (arabicNum) => {
  * deromanize('CCXIV');
  * // returns 214
  */
-export const deromanize = (romanNum) => {
+const deromanize = (romanNum) => {
   let arabicNum = 0;
   romanNum = romanNum
+    .toString()
     .replace(/\s+/g, '')
     .toUpperCase();
 
@@ -71,4 +72,9 @@ export const deromanize = (romanNum) => {
   }
 
   return arabicNum;
+}
+
+module.exports = {
+  romanize,
+  deromanize
 }
