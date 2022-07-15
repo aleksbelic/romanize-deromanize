@@ -1,4 +1,4 @@
-import { NUM_MAP, ROMAN_NUMERALS } from './helper.mjs';
+const { NUM_MAP, ROMAN_NUMERALS } = require('./helper.js');
 
 /**
  * Converts given arabic number to roman.
