@@ -16,10 +16,10 @@ const romanize = (arabicNum) => {
   }
 
   if (!Number.isInteger(arabicNum) || arabicNum <= 0) {
-    throw Error('Number must be a positive integer.');
+    throw new Error('Number must be a positive integer.');
   }
   else if (arabicNum > 3999) {
-    throw Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
+    throw new Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
   }
 
   for (const [numMapRoman, numMapArabic] of NUM_MAP) {

@@ -7,7 +7,7 @@
  */
 const sortMap = (unsortedMap, sortType = 'asc') => {
   if (!(unsortedMap instanceof Map)) {
-    throw Error('Please provide Map object.')
+    throw new Error('Please provide Map object.')
   }
   if (sortType.toLowerCase() === 'asc') {
     return new Map([...unsortedMap.entries()].sort((a, b) => {
@@ -20,7 +20,7 @@ const sortMap = (unsortedMap, sortType = 'asc') => {
     }));
   }
   else {
-    throw Error('Sort type unknown, please use "asc" for ascending or "dsc" for descending.')
+    throw new Error('Sort type unknown, please use "asc" for ascending or "dsc" for descending.')
   }
 }
 
