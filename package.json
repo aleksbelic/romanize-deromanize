@@ -2,10 +2,9 @@
   "name": "romanize-deromanize",
   "version": "1.0.0",
   "description": "Convert roman numbers to arabic and via versa with ease.",
-  "main": "./src/romanize-deromanize.mjs",
-  "type": "module",
+  "main": "./src/romanize-deromanize.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
     "romanize",
     "deromanize"
   ],
-  "author": "Aleksandar Belic",
+  "author": "Aleksandar Belic - Aleksanchez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aleksbelic/romanize-deromanize/issues"

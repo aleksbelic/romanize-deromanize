@@ -1,4 +1,4 @@
-import { romanize } from '../src/romanize-deromanize.mjs';
+const { romanize } = require('../src/romanize-deromanize.js');
 
 test('Basic rules', () => {
   expect(romanize(1)).toEqual('I');

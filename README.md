@@ -12,17 +12,20 @@ $ npm install romanize-deromanize
 ```
 
 ## Usage
-Simply use the following two methods:
+Simply include the library
 ```
-romanize('CCXIV'); // returns 214
+const { romanize, deromanize } = require('romanize-deromanize');
 ```
-and
+and use the following two methods:
 ```
-deromanize(671); // returns 'DCLXXI'
+romanize(214); // returns CCXIV
+```
+```
+deromanize('DCLXXI'); // returns 671
 ```
 
 ## Testing
-Unit tests are conducted using [Jest](https://jestjs.io/). Run all tests from project root using command:
+Unit tests are conducted using [Jest](https://jestjs.io/). Run all tests from project root using the following command:
 ```
 $ npm t
 ```
@@ -30,6 +33,9 @@ or just run a single test suite by specifying its name, e.g.:
 ```
 $ npm t romanize.test.js
 ```
+
+## Issues
+If you experience any problems or you just need an extra feature - feel free to create new [GitHub repo issue](https://github.com/aleksbelic/romanize-deromanize/issues).
 
 ## References
 - [Arabic numerals on Wikipedia](https://en.wikipedia.org/wiki/Arabic_numerals)

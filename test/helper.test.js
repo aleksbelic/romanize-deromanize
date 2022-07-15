@@ -1,4 +1,4 @@
-import { sortMap } from '../src/helper.mjs';
+const { sortMap } = require('../src/helper.js');
 
 let unsortedMap = new Map([['b', 2], ['c', 3], ['a', 1]]);
 let sortedMapAsc = new Map([['a', 1], ['b', 2], ['c', 3]]);
