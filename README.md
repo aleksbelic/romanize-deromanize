@@ -18,7 +18,7 @@ const { romanize, deromanize } = require('romanize-deromanize');
 ```
 and use the following two methods:
 ```
-romanize(214); // returns CCXIV
+romanize(214); // returns 'CCXIV'
 ```
 ```
 deromanize('DCLXXI'); // returns 671
