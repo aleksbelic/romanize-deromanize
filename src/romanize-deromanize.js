@@ -1,14 +1,14 @@
-const { NUM_MAP, ROMAN_NUMERALS } = require('./helper.js');
+const {NUM_MAP, ROMAN_NUMERALS} = require('./helper.js');
 
 /**
  * Converts given arabic number to roman.
- * @param {number|string} arabicNum arabic number that needs to be converted to roman number 
+ * @param {number|string} arabicNum arabic number that needs to be converted to roman number
  * @returns {string} roman number for given arabic number
  * @example
  * romanize(671);
  * // returns 'DCLXXI'
  */
-const romanize = (arabicNum) => {
+const romanize = arabicNum => {
   let romanNum = '';
 
   if (typeof arabicNum === 'string') {
@@ -17,9 +17,10 @@ const romanize = (arabicNum) => {
 
   if (!Number.isInteger(arabicNum) || arabicNum <= 0) {
     throw new Error('Number must be a positive integer.');
-  }
-  else if (arabicNum > 3999) {
-    throw new Error('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
+  } else if (arabicNum > 3999) {
+    throw new Error(
+      'The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).'
+    );
   }
 
   for (const [numMapRoman, numMapArabic] of NUM_MAP) {
@@ -32,7 +33,7 @@ const romanize = (arabicNum) => {
   }
 
   return romanNum;
-}
+};
 
 /**
  * Converts given roman number to arabic.
@@ -42,17 +43,15 @@ const romanize = (arabicNum) => {
  * deromanize('CCXIV');
  * // returns 214
  */
-const deromanize = (romanNum) => {
+const deromanize = romanNum => {
   let arabicNum = 0;
-  romanNum = romanNum
-    .toString()
-    .replace(/\s+/g, '')
-    .toUpperCase();
+  romanNum = romanNum.toString().replace(/\s+/g, '').toUpperCase();
 
   let romanNumCharArray = Array.from(romanNum);
 
   // check for invalid numerals
-  [...new Set(romanNumCharArray)].forEach(romanNumChar => { // only unique array elements
+  [...new Set(romanNumCharArray)].forEach(romanNumChar => {
+    // only unique array elements
     if (!ROMAN_NUMERALS.includes(romanNumChar)) {
       throw new Error('Invalid roman numeral: ' + romanNumChar);
     }
@@ -61,8 +60,7 @@ const deromanize = (romanNum) => {
   romanNumCharArray.forEach((romanNumChar, index) => {
     if (NUM_MAP.get(romanNumChar) < NUM_MAP.get(romanNumCharArray[index + 1])) {
       arabicNum -= NUM_MAP.get(romanNumChar);
-    }
-    else {
+    } else {
       arabicNum += NUM_MAP.get(romanNumChar);
     }
   });
@@ -72,9 +70,9 @@ const deromanize = (romanNum) => {
   }
 
   return arabicNum;
-}
+};
 
 module.exports = {
   romanize,
-  deromanize
-}
+  deromanize,
+};

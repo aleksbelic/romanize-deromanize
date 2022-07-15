@@ -36,9 +36,11 @@ deromanize('DCLXXI'); // returns 671
 
 Code formatting is done by [Prettier](https://prettier.io/).
 Simply format project files by following predefined rules in `.prettierrc.json`:
+
 ```
 $ npx prettier --write .
 ```
+
 To exclude files from formatting, please refer to `.prettierignore`, which corresponds to `.gitignore`.
 
 ## Testing

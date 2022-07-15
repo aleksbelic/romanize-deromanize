@@ -1,4 +1,4 @@
-const { deromanize } = require('../src/romanize-deromanize.js');
+const {deromanize} = require('../src/romanize-deromanize.js');
 
 test('Basic roman numerals', () => {
   expect(deromanize('I')).toEqual(1);
@@ -29,10 +29,12 @@ test('Invalid roman number - unknown numeral', () => {
 
 test('Invalid roman number - more than 3 successive identical numerals', () => {
   expect(() => deromanize('IIII')).toThrowError('Invalid roman number: IIII');
-  expect(() => deromanize('MMCCXXXX')).toThrowError('Invalid roman number: MMCCXXXX');
+  expect(() => deromanize('MMCCXXXX')).toThrowError(
+    'Invalid roman number: MMCCXXXX'
+  );
 });
 
-test('Invalid roman number - numerals V, L & D can\'t be successively repeated', () => {
+test("Invalid roman number - numerals V, L & D can't be successively repeated", () => {
   expect(() => deromanize('VVI')).toThrowError('Invalid roman number: VVI');
   expect(() => deromanize('MDCLL')).toThrowError('Invalid roman number: MDCLL');
   expect(() => deromanize('MMDDD')).toThrowError('Invalid roman number: MMDDD');

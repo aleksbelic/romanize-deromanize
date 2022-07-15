@@ -1,4 +1,4 @@
-const { romanize } = require('../src/romanize-deromanize.js');
+const {romanize} = require('../src/romanize-deromanize.js');
 
 test('Basic rules', () => {
   expect(romanize(1)).toEqual('I');
@@ -17,22 +17,33 @@ test('Basic rules', () => {
 });
 
 test('Arabic number is a string or some other data struct', () => {
-  expect(() => romanize('   ')).toThrowError('Number must be a positive integer.');
-  expect(() => romanize('abc')).toThrowError('Number must be a positive integer.');
-  expect(() => romanize({ a: '1' })).toThrowError('Number must be a positive integer.');
-  expect(() => romanize([1])).toThrowError('Number must be a positive integer.');
+  expect(() => romanize('   ')).toThrowError(
+    'Number must be a positive integer.'
+  );
+  expect(() => romanize('abc')).toThrowError(
+    'Number must be a positive integer.'
+  );
+  expect(() => romanize({a: '1'})).toThrowError(
+    'Number must be a positive integer.'
+  );
+  expect(() => romanize([1])).toThrowError(
+    'Number must be a positive integer.'
+  );
   expect(romanize('33')).toEqual('XXXIII');
 });
 
 test('Arabic number is not a positive intiger', () => {
-
-  expect(() => romanize(1.45)).toThrowError('Number must be a positive integer.');
+  expect(() => romanize(1.45)).toThrowError(
+    'Number must be a positive integer.'
+  );
   expect(() => romanize(0)).toThrowError('Number must be a positive integer.');
   expect(() => romanize(-5)).toThrowError('Number must be a positive integer.');
 });
 
 test('Arabic number is greater than 3999', () => {
-  expect(() => romanize(4000)).toThrowError('The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).');
+  expect(() => romanize(4000)).toThrowError(
+    'The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).'
+  );
 });
 
 test('Random arabic numbers', () => {
