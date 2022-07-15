@@ -1,4 +1,4 @@
-import { deromanize } from '../src/romanize-deromanize.mjs';
+const { deromanize } = require('../src/romanize-deromanize.js');
 
 test('Basic roman numerals', () => {
   expect(deromanize('I')).toEqual(1);
@@ -8,6 +8,10 @@ test('Basic roman numerals', () => {
   expect(deromanize('C')).toEqual(100);
   expect(deromanize('D')).toEqual(500);
   expect(deromanize('M')).toEqual(1000);
+});
+
+test('Roman number is not a string', () => {
+  expect(() => deromanize(39)).toThrowError('Invalid roman numeral: 3');
 });
 
 test('Roman number is lower case', () => {

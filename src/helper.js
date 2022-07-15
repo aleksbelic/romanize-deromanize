@@ -5,7 +5,7 @@
  * @returns {Map} new Map object sorted by values
  * @throws will throw an error if the params are invalid
  */
-export const sortMap = (unsortedMap, sortType = 'asc') => {
+const sortMap = (unsortedMap, sortType = 'asc') => {
   if (!(unsortedMap instanceof Map)) {
     throw Error('Please provide Map object.')
   }
@@ -24,7 +24,7 @@ export const sortMap = (unsortedMap, sortType = 'asc') => {
   }
 }
 
-export const NUM_MAP = sortMap(new Map([
+const NUM_MAP = sortMap(new Map([
   ['M', 1000],
   ['CM', 900],
   ['D', 500],
@@ -40,6 +40,12 @@ export const NUM_MAP = sortMap(new Map([
   ['I', 1]]
 ), 'dsc');
 
-export const ROMAN_NUMERALS = Array
+const ROMAN_NUMERALS = Array
   .from(NUM_MAP.keys())
   .filter(romanNumeral => romanNumeral.length === 1);
+
+module.exports = {
+  sortMap,
+  NUM_MAP,
+  ROMAN_NUMERALS
+}
