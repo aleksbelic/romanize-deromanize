@@ -48,11 +48,14 @@ test('Arabic number is greater than 3999', () => {
 
 test('Random arabic numbers', () => {
   expect(romanize(44)).toEqual('XLIV');
+  expect(romanize(55)).toEqual('LV');
   expect(romanize(69)).toEqual('LXIX');
+  expect(romanize(71)).toEqual('LXXI');
   expect(romanize(99)).toEqual('XCIX');
   expect(romanize(153)).toEqual('CLIII');
   expect(romanize(385)).toEqual('CCCLXXXV');
   expect(romanize(444)).toEqual('CDXLIV');
+  expect(romanize(669)).toEqual('DCLXIX');
   expect(romanize(802)).toEqual('DCCCII');
   expect(romanize(811)).toEqual('DCCCXI');
   expect(romanize(999)).toEqual('CMXCIX');
@@ -75,4 +78,5 @@ test('Random arabic numbers', () => {
   expect(romanize(3129)).toEqual('MMMCXXIX');
   expect(romanize(3329)).toEqual('MMMCCCXXIX');
   expect(romanize(3512)).toEqual('MMMDXII');
+  expect(romanize(3999)).toEqual('MMMCMXCIX');
 });
