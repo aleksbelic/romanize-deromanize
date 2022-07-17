@@ -1,6 +1,6 @@
 {
   "name": "romanize-deromanize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert roman numbers to arabic and via versa with ease.",
   "main": "./src/romanize-deromanize.js",
   "scripts": {
@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/aleksbelic/romanize-deromanize#readme",
   "devDependencies": {
-    "jest": "^28.1.1"
+    "eslint": "^8.19.0",
+    "jest": "^28.1.1",
+    "prettier": "2.7.1"
   },
   "jest": {
     "verbose": true,
