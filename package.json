@@ -4,7 +4,9 @@
   "description": "Convert roman numbers to arabic and vice versa with ease.",
   "main": "./src/romanize-deromanize.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "npx eslint .",
+    "pretty": "npx prettier --write ."
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@ $ npm install romanize-deromanize
 Simply include the library
 
 ```
-const { romanize, deromanize } = require('romanize-deromanize');
+const {romanize, deromanize} = require('romanize-deromanize');
 ```
 
 and use the following two methods:
@@ -38,12 +38,24 @@ Code formatting is done by [Prettier](https://prettier.io/).
 Simply format project files by following predefined rules in `.prettierrc.json`:
 
 ```
+$ npm run pretty
+```
+
+which is an alias for:
+
+```
 $ npx prettier --write .
 ```
 
 To exclude files from formatting, please refer to `.prettierignore` (corresponds to `.gitignore`).
 
 Identifying problematic patterns is covered by static code analysis tool [ESLint](https://eslint.org/):
+
+```
+$ npm run lint
+```
+
+which is an alias for:
 
 ```
 $ npx eslint .
