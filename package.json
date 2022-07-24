@@ -1,6 +1,6 @@
 {
   "name": "romanize-deromanize",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert roman numbers to arabic and vice versa with ease.",
   "main": "./src/romanize-deromanize.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "deromanize"
   ],
   "author": "Aleksandar Belic - Aleksanchez",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aleksbelic/romanize-deromanize/issues"
   },

@@ -1,5 +1,9 @@
 # romanize &harr; deromanize
 
+[![GitHub release](https://img.shields.io/github/release/aleksbelic/romanize-deromanize.svg?style=flat-square)](https://GitHub.com/aleksbelic/romanize-deromanize/releases/)
+![testing workflow](https://github.com/aleksbelic/romanize-deromanize/actions/workflows/tests.yml/badge.svg)
+[![GitHub license](https://img.shields.io/github/license/aleksbelic/romanize-deromanize?style=flat-square)](https://raw.githubusercontent.com/aleksbelic/romanize-deromanize/main/LICENSE.md)
+
 ## About
 
 [Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals) are a numeral system that originated in [ancient Rome](https://en.wikipedia.org/wiki/Ancient_Rome) and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.
