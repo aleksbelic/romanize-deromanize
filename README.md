@@ -1,8 +1,9 @@
 # romanize &harr; deromanize
 
-[![GitHub release](https://img.shields.io/github/release/aleksbelic/romanize-deromanize.svg?style=flat-square)](https://GitHub.com/aleksbelic/romanize-deromanize/releases/)
+[![GitHub release](https://img.shields.io/github/release/aleksbelic/romanize-deromanize.svg)](https://GitHub.com/aleksbelic/romanize-deromanize/releases/)
 ![testing workflow](https://github.com/aleksbelic/romanize-deromanize/actions/workflows/tests.yml/badge.svg)
-[![GitHub license](https://img.shields.io/github/license/aleksbelic/romanize-deromanize?style=flat-square)](https://raw.githubusercontent.com/aleksbelic/romanize-deromanize/main/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/aleksbelic/romanize-deromanize)](https://raw.githubusercontent.com/aleksbelic/romanize-deromanize/main/LICENSE.md)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## About
 

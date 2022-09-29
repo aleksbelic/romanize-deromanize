@@ -4,6 +4,7 @@ const {NUM_MAP, ROMAN_NUMERALS} = require('./helper.js');
  * Converts given arabic number to roman.
  * @param {number|string} arabicNum arabic number that needs to be converted to roman number
  * @returns {string} roman number for given arabic number
+ * @author Aleksandar Belic Aleksanchez <aleks.belic@gmail.com>
  * @example
  * romanize(671);
  * // returns 'DCLXXI'
@@ -39,6 +40,7 @@ const romanize = arabicNum => {
  * Converts given roman number to arabic.
  * @param {string} romanNum roman number that needs to be converted to arabic
  * @returns {number} arabic number for given roman number
+ * @author Aleksandar Belic Aleksanchez <aleks.belic@gmail.com>
  * @example
  * deromanize('CCXIV');
  * // returns 214
@@ -53,7 +55,7 @@ const deromanize = romanNum => {
   [...new Set(romanNumCharArray)].forEach(romanNumChar => {
     // only unique array elements
     if (!ROMAN_NUMERALS.includes(romanNumChar)) {
-      throw new Error('Invalid roman numeral: ' + romanNumChar);
+      throw new Error(`Invalid roman numeral: ${romanNumChar}`);
     }
   });
 
@@ -66,7 +68,7 @@ const deromanize = romanNum => {
   });
 
   if (romanize(arabicNum) !== romanNum) {
-    throw new Error('Invalid roman number: ' + romanNum);
+    throw new Error(`Invalid roman number: ${romanNum}`);
   }
 
   return arabicNum;
