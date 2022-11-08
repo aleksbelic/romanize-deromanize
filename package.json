@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Convert roman numbers to arabic and vice versa with ease.",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "lint": "npx eslint .",
     "pretty": "npx prettier --write ."
@@ -29,13 +30,16 @@
   },
   "homepage": "https://github.com/aleksbelic/romanize-deromanize#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
     "eslint": "^8.26.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
     "jest": "^29.2.2",
     "prettier": "2.7.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
-  "jest": {
-    "verbose": true,
-    "collectCoverage": true
-  }
+  "files": [
+    "dist/**/*"
+  ]
 }

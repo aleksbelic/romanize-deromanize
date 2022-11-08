@@ -1,16 +1,17 @@
-const {sortMap} = require('../src/helper.js');
+import {test, expect} from '@jest/globals';
+import {sortMap} from '../src/helper';
 
-let unsortedMap = new Map([
+const unsortedMap = new Map([
   ['b', 2],
   ['c', 3],
   ['a', 1],
 ]);
-let sortedMapAsc = new Map([
+const sortedMapAsc = new Map([
   ['a', 1],
   ['b', 2],
   ['c', 3],
 ]);
-let sortedMapDsc = new Map([
+const sortedMapDsc = new Map([
   ['c', 3],
   ['b', 2],
   ['a', 1],
@@ -19,6 +20,8 @@ let sortedMapDsc = new Map([
 // Basic
 test('Sort map - invalid Map object param', () => {
   const notMap = {a: 1, b: 2, c: 3};
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   expect(() => sortMap(notMap)).toThrowError('Please provide Map object.');
 });
 test('Sort map - default sort type param', () => {

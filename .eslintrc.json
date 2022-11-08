@@ -1,13 +1,18 @@
 {
   "env": {
     "browser": true,
-    "commonjs": true,
-    "es2021": true,
-    "jest": true
+    "node": true,
+    "es2021": true
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "rules": {}
+  "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-tsdoc"],
+  "overrides": [],
+  "rules": {
+    "tsdoc/syntax": "warn"
+  }
 }

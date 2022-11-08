@@ -1,4 +1,5 @@
-const {romanize} = require('../src/romanize-deromanize.js');
+import {test, expect} from '@jest/globals';
+import {romanize} from '../src/romanize-deromanize';
 
 test('Basic rules', () => {
   expect(romanize(1)).toEqual('I');
@@ -23,9 +24,13 @@ test('Arabic number is a string or some other data struct', () => {
   expect(() => romanize('abc')).toThrowError(
     'Number must be a positive integer.'
   );
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   expect(() => romanize({a: '1'})).toThrowError(
     'Number must be a positive integer.'
   );
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   expect(() => romanize([1])).toThrowError(
     'Number must be a positive integer.'
   );
