@@ -59,17 +59,21 @@ export const deromanize = (romanNum: string): number => {
       throw new Error(`Invalid roman numeral: ${currentRomanNumChar}`);
     }
 
-    let nextLowerArabicValue: number | undefined = NUM_MAP.get(
-      romanNumCharArray[index + 1]
-    );
-    if (nextLowerArabicValue === undefined) {
-      nextLowerArabicValue = 0;
-    }
-
-    if (arabicValueForCurrentRomanNumChar < nextLowerArabicValue) {
-      arabicNum -= arabicValueForCurrentRomanNumChar;
-    } else {
+    if (index === romanNumCharArray.length - 1) {
       arabicNum += arabicValueForCurrentRomanNumChar;
+    } else {
+      const nextLowerArabicValue: number | undefined = NUM_MAP.get(
+        romanNumCharArray[index + 1]
+      );
+      if (nextLowerArabicValue === undefined) {
+        throw new Error(
+          `Invalid roman numeral: ${romanNumCharArray[index + 1]}`
+        );
+      } else if (arabicValueForCurrentRomanNumChar < nextLowerArabicValue) {
+        arabicNum -= arabicValueForCurrentRomanNumChar;
+      } else {
+        arabicNum += arabicValueForCurrentRomanNumChar;
+      }
     }
   });
 

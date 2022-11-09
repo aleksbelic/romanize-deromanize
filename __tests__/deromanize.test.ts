@@ -27,6 +27,7 @@ test('Roman number contains whitespace', () => {
 });
 
 test('Invalid roman number - unknown numeral', () => {
+  expect(() => deromanize('LXXA')).toThrowError('Invalid roman numeral: A');
   expect(() => deromanize('LXAX')).toThrowError('Invalid roman numeral: A');
 });
 
@@ -47,6 +48,7 @@ test('Invalid roman number: false order of numerals', () => {
   expect(() => deromanize('XXC')).toThrowError('Invalid roman number: XXC');
   expect(() => deromanize('CCCD')).toThrowError('Invalid roman number: CCCD');
   expect(() => deromanize('CMCM')).toThrowError('Invalid roman number: CMCM');
+  expect(() => deromanize('IVXCM')).toThrowError('Invalid roman number: IVXCM');
 });
 
 test('Random roman numbers', () => {

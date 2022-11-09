@@ -6,7 +6,8 @@
     "build": "tsc",
     "test": "jest",
     "lint": "npx eslint .",
-    "pretty": "npx prettier --write ."
+    "pretty": "npx prettier --write .",
+    "all": "npm run pretty && npm run build && npm run lint & npm run test"
   },
   "repository": {
     "type": "git",
