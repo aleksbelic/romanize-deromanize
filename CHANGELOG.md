@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - complete TypeScript rewrite
 - switching to TSDoc
+- almost 40% smaller package
 
 ## [1.0.3](https://github.com/aleksbelic/romanize-deromanize/releases/tag/1.0.3) - 2022-07-24
 
