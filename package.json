@@ -2,6 +2,8 @@
   "name": "romanize-deromanize",
   "version": "2.0.0",
   "description": "Convert roman numbers to arabic and vice versa with ease.",
+  "main": "./dist/romanize-deromanize.js",
+  "types": "./dist/romanize-deromanize.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
