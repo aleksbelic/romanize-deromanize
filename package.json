@@ -1,12 +1,13 @@
 {
   "name": "romanize-deromanize",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Convert roman numbers to arabic and vice versa with ease.",
-  "main": "./src/romanize-deromanize.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "lint": "npx eslint .",
-    "pretty": "npx prettier --write ."
+    "pretty": "npx prettier --write .",
+    "all": "npm run pretty && npm run build && npm run lint & npm run test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "conversion",
     "decimal",
     "romanize",
-    "deromanize"
+    "deromanize",
+    "typescript"
   ],
   "author": "Aleksandar Belic - Aleksanchez",
   "license": "MIT",
@@ -30,12 +32,16 @@
   },
   "homepage": "https://github.com/aleksbelic/romanize-deromanize#readme",
   "devDependencies": {
-    "eslint": "^8.19.0",
-    "jest": "^28.1.1",
-    "prettier": "2.7.1"
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.26.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "jest": "^29.2.2",
+    "prettier": "2.7.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
   },
-  "jest": {
-    "verbose": true,
-    "collectCoverage": true
-  }
+  "files": [
+    "dist/**/*"
+  ]
 }

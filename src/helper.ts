@@ -1,11 +1,18 @@
 /**
  * Uses an existing, unsorted Map object to create new one - sorted by value for given sort type.
- * @param {Map} unsortedMap given Map object that should be sorted by value
- * @param {string} sortType sort type, can be 'asc' for ascending (default) and 'dsc' for descending; case-insensitive
- * @returns {Map} new Map object sorted by values
- * @throws will throw an error if the params are invalid
+ *
+ * @param unsortedMap - given Map object that should be sorted by value
+ * @param sortType - 'asc' for ascending (default) or 'dsc' for descending; case-insensitive
+ * @returns new Map object sorted by values
+ * @throws an error if the params are invalid
+ * @example
+ * sortMap(new Map([['b', 2],['c', 3],['a', 1]]));
+ * // returns new Map([['a', 1],['b', 2],['c', 3]])
  */
-const sortMap = (unsortedMap, sortType = 'asc') => {
+export const sortMap = (
+  unsortedMap: Map<string, number>,
+  sortType = 'asc'
+): Map<string, number> => {
   if (!(unsortedMap instanceof Map)) {
     throw new Error('Please provide Map object.');
   }
@@ -28,7 +35,7 @@ const sortMap = (unsortedMap, sortType = 'asc') => {
   }
 };
 
-const NUM_MAP = sortMap(
+export const NUM_MAP: Map<string, number> = sortMap(
   new Map([
     ['M', 1000],
     ['CM', 900],
@@ -47,12 +54,6 @@ const NUM_MAP = sortMap(
   'dsc'
 );
 
-const ROMAN_NUMERALS = Array.from(NUM_MAP.keys()).filter(
+export const ROMAN_NUMERALS: string[] = Array.from(NUM_MAP.keys()).filter(
   romanNumeral => romanNumeral.length === 1
 );
-
-module.exports = {
-  sortMap,
-  NUM_MAP,
-  ROMAN_NUMERALS,
-};

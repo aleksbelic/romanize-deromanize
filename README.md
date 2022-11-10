@@ -1,14 +1,15 @@
 # romanize &harr; deromanize
 
-[![GitHub release](https://img.shields.io/github/release/aleksbelic/romanize-deromanize.svg?style=flat-square)](https://GitHub.com/aleksbelic/romanize-deromanize/releases/)
+[![GitHub release](https://img.shields.io/github/release/aleksbelic/romanize-deromanize.svg)](https://GitHub.com/aleksbelic/romanize-deromanize/releases/)
 ![testing workflow](https://github.com/aleksbelic/romanize-deromanize/actions/workflows/tests.yml/badge.svg)
-[![GitHub license](https://img.shields.io/github/license/aleksbelic/romanize-deromanize?style=flat-square)](https://raw.githubusercontent.com/aleksbelic/romanize-deromanize/main/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/aleksbelic/romanize-deromanize)](https://raw.githubusercontent.com/aleksbelic/romanize-deromanize/main/LICENSE.md)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## About
 
 [Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals) are a numeral system that originated in [ancient Rome](https://en.wikipedia.org/wiki/Ancient_Rome) and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.
 
-This javascript module allows you to `convert roman numbers to arabic and vice versa` with ease.
+This JavaScript module allows you to `convert roman numbers to arabic and vice versa` with ease. It's programmed in `TypeScript` so it can be used with both JS & TS projects.
 
 ## Installation
 
@@ -67,6 +68,18 @@ $ npx eslint .
 
 Linting config can be found in `.eslintrc.json`.
 
+If you want to run all "prod-ready" scripts successively: format, build, lint & test - simply run:
+
+```
+$ npm run all
+```
+
+which is short for:
+
+```
+$ npm run pretty && npm run build && npm run lint & npm run test
+```
+
 ## Testing
 
 Unit tests are conducted using [Jest](https://jestjs.io/). Run all tests from project root using the following command:
@@ -78,7 +91,7 @@ $ npm t
 or just run a single test suite by specifying its name, e.g.:
 
 ```
-$ npm t romanize.test.js
+$ npm t romanize.test.ts
 ```
 
 ## Issues
