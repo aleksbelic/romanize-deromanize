@@ -22,7 +22,8 @@
     "conversion",
     "decimal",
     "romanize",
-    "deromanize"
+    "deromanize",
+    "typescript"
   ],
   "author": "Aleksandar Belic - Aleksanchez",
   "license": "MIT",
