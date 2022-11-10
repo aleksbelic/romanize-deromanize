@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/aleksbelic/romanize-deromanize/releases/tag/2.0.0) - 2022-11-10
+
+### Added
+
+- TypeScript dev-dependencies:
+  - typescript
+  - ts-jest
+  - @typescript-eslint/eslint-plugin
+  - @typescript-eslint/parser
+  - eslint-plugin-tsdoc
+- Prettier badge to README markdown
+- new unit tests
+
+### Changed
+
+- complete TypeScript rewrite
+- switching to TSDoc
+
 ## [1.0.3](https://github.com/aleksbelic/romanize-deromanize/releases/tag/1.0.3) - 2022-07-24
 
 ### Added
