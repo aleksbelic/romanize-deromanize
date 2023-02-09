@@ -13,6 +13,7 @@
   "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-tsdoc"],
   "overrides": [],
   "rules": {
-    "tsdoc/syntax": "warn"
+    "tsdoc/syntax": "warn",
+    "@typescript-eslint/no-var-requires": "warn"
   }
 }
