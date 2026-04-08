@@ -18,36 +18,42 @@ test('Basic rules', () => {
 });
 
 test('Arabic number is a string or some other data struct', () => {
-  expect(() => romanize('   ')).toThrowError(
-    'Number must be a positive integer.'
-  );
-  expect(() => romanize('abc')).toThrowError(
-    'Number must be a positive integer.'
-  );
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  expect(() => romanize({a: '1'})).toThrowError(
-    'Number must be a positive integer.'
-  );
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  expect(() => romanize([1])).toThrowError(
-    'Number must be a positive integer.'
-  );
+  expect(() => {
+    romanize('   ');
+  }).toThrow(new Error('Number must be a positive integer.'));
+  expect(() => {
+    romanize('abc');
+  }).toThrow(new Error('Number must be a positive integer.'));
+  expect(() => {
+    // @ts-expect-error - need to ignore this error to test the function's behavior when a non-string param is provided
+    romanize({a: '1'});
+  }).toThrow(new Error('Number must be a positive integer.'));
+  expect(() => {
+    // @ts-expect-error - need to ignore this error to test the function's behavior when a non-string param is provided
+    romanize([1]);
+  }).toThrow(new Error('Number must be a positive integer.'));
   expect(romanize('33')).toEqual('XXXIII');
 });
 
-test('Arabic number is not a positive intiger', () => {
-  expect(() => romanize(1.45)).toThrowError(
-    'Number must be a positive integer.'
-  );
-  expect(() => romanize(0)).toThrowError('Number must be a positive integer.');
-  expect(() => romanize(-5)).toThrowError('Number must be a positive integer.');
+test('Arabic number is not a positive integer', () => {
+  expect(() => {
+    romanize(1.45);
+  }).toThrow(new Error('Number must be a positive integer.'));
+  expect(() => {
+    romanize(0);
+  }).toThrow(new Error('Number must be a positive integer.'));
+  expect(() => {
+    romanize(-5);
+  }).toThrow(new Error('Number must be a positive integer.'));
 });
 
 test('Arabic number is greater than 3999', () => {
-  expect(() => romanize(4000)).toThrowError(
-    'The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).'
+  expect(() => {
+    romanize(4000);
+  }).toThrow(
+    new Error(
+      'The largest number that can be represented using roman numerals is 3999 (MMMCMXCIX).'
+    )
   );
 });
 

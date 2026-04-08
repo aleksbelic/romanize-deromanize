@@ -20,9 +20,10 @@ const sortedMapDsc = new Map([
 // Basic
 test('Sort map - invalid Map object param', () => {
   const notMap = {a: 1, b: 2, c: 3};
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  expect(() => sortMap(notMap)).toThrowError('Please provide Map object.');
+  // @ts-expect-error - need to ignore this error to test the function's behavior when a non-map param is provided
+  expect(() => sortMap(notMap)).toThrow(
+    new Error('Please provide Map object.')
+  );
 });
 test('Sort map - default sort type param', () => {
   expect([...sortMap(unsortedMap)].toString()).toEqual(
@@ -30,8 +31,10 @@ test('Sort map - default sort type param', () => {
   );
 });
 test('Sort map - unknown sort type param', () => {
-  expect(() => sortMap(unsortedMap, 'some_unknown_sort_type')).toThrowError(
-    'Sort type unknown, please use "asc" for ascending or "dsc" for descending.'
+  expect(() => sortMap(unsortedMap, 'some_unknown_sort_type')).toThrow(
+    new Error(
+      'Sort type unknown, please use "asc" for ascending or "dsc" for descending.'
+    )
   );
 });
 

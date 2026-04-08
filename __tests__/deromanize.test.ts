@@ -12,9 +12,14 @@ test('Basic roman numerals', () => {
 });
 
 test('Roman number is not a string', () => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  expect(() => deromanize(39)).toThrowError('Invalid roman numeral: 3');
+  // @ts-expect-error - need to ignore this error to test the function's behavior when a non-string param is provided
+  expect(() => deromanize(39)).toThrow(
+    new Error('Input must be a string representing a Roman numeral')
+  );
+  // @ts-expect-error - need to ignore this error to test the function's behavior when a non-string param is provided
+  expect(() => deromanize([39])).toThrow(
+    new Error('Input must be a string representing a Roman numeral')
+  );
 });
 
 test('Roman number is lower case', () => {
@@ -27,28 +32,50 @@ test('Roman number contains whitespace', () => {
 });
 
 test('Invalid roman number - unknown numeral', () => {
-  expect(() => deromanize('LXXA')).toThrowError('Invalid roman numeral: A');
-  expect(() => deromanize('LXAX')).toThrowError('Invalid roman numeral: A');
+  expect(() => deromanize('LXXA')).toThrow(
+    new Error('Invalid roman numeral: A')
+  );
+  expect(() => deromanize('LXAX')).toThrow(
+    new Error('Invalid roman numeral: A')
+  );
+  expect(() => deromanize('XA')).toThrow(new Error('Invalid roman numeral: A'));
+  expect(() => deromanize('A')).toThrow(new Error('Invalid roman numeral: A'));
 });
 
 test('Invalid roman number - more than 3 successive identical numerals', () => {
-  expect(() => deromanize('IIII')).toThrowError('Invalid roman number: IIII');
-  expect(() => deromanize('MMCCXXXX')).toThrowError(
-    'Invalid roman number: MMCCXXXX'
+  expect(() => deromanize('IIII')).toThrow(
+    new Error('Invalid roman number: IIII')
+  );
+  expect(() => deromanize('MMCCXXXX')).toThrow(
+    new Error('Invalid roman number: MMCCXXXX')
   );
 });
 
 test("Invalid roman number - numerals V, L & D can't be successively repeated", () => {
-  expect(() => deromanize('VVI')).toThrowError('Invalid roman number: VVI');
-  expect(() => deromanize('MDCLL')).toThrowError('Invalid roman number: MDCLL');
-  expect(() => deromanize('MMDDD')).toThrowError('Invalid roman number: MMDDD');
+  expect(() => deromanize('VVI')).toThrow(
+    new Error('Invalid roman number: VVI')
+  );
+  expect(() => deromanize('MDCLL')).toThrow(
+    new Error('Invalid roman number: MDCLL')
+  );
+  expect(() => deromanize('MMDDD')).toThrow(
+    new Error('Invalid roman number: MMDDD')
+  );
 });
 
 test('Invalid roman number: false order of numerals', () => {
-  expect(() => deromanize('XXC')).toThrowError('Invalid roman number: XXC');
-  expect(() => deromanize('CCCD')).toThrowError('Invalid roman number: CCCD');
-  expect(() => deromanize('CMCM')).toThrowError('Invalid roman number: CMCM');
-  expect(() => deromanize('IVXCM')).toThrowError('Invalid roman number: IVXCM');
+  expect(() => deromanize('XXC')).toThrow(
+    new Error('Invalid roman number: XXC')
+  );
+  expect(() => deromanize('CCCD')).toThrow(
+    new Error('Invalid roman number: CCCD')
+  );
+  expect(() => deromanize('CMCM')).toThrow(
+    new Error('Invalid roman number: CMCM')
+  );
+  expect(() => deromanize('IVXCM')).toThrow(
+    new Error('Invalid roman number: IVXCM')
+  );
 });
 
 test('Random roman numbers', () => {

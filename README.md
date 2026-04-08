@@ -15,25 +15,25 @@ This JavaScript module allows you to `convert roman numbers to arabic and vice v
 
 Add module to your project dependencies:
 
-```
-$ npm install romanize-deromanize
+```bash
+npm install romanize-deromanize
 ```
 
 ## Usage
 
 Simply include the library
 
-```
+```typescript
 const {romanize, deromanize} = require('romanize-deromanize');
 ```
 
 and use the following two methods:
 
-```
+```typescript
 romanize(214); // returns 'CCXIV'
 ```
 
-```
+```typescript
 deromanize('DCLXXI'); // returns 671
 ```
 
@@ -42,56 +42,56 @@ deromanize('DCLXXI'); // returns 671
 Code formatting is done by [Prettier](https://prettier.io/).
 Simply format project files by following predefined rules in `.prettierrc.json`:
 
-```
-$ npm run pretty
+```bash
+npm run pretty
 ```
 
 which is an alias for:
 
-```
-$ npx prettier --write .
+```bash
+npx prettier --write .
 ```
 
 To exclude files from formatting, please refer to `.prettierignore` (corresponds to `.gitignore`).
 
 Identifying problematic patterns is covered by static code analysis tool [ESLint](https://eslint.org/):
 
-```
-$ npm run lint
+```bash
+npm run lint
 ```
 
 which is an alias for:
 
-```
-$ npx eslint .
+```bash
+npx eslint .
 ```
 
-Linting config can be found in `.eslintrc.json`.
+Linting config can be found in `eslint.config.mjs`.
 
 If you want to run all "prod-ready" scripts successively: format, build, lint & test - simply run:
 
-```
-$ npm run all
+```bash
+npm run all
 ```
 
 which is short for:
 
-```
-$ npm run pretty && npm run build && npm run lint & npm run test
+```bash
+npm run pretty && npm run build && npm run lint && npm run test
 ```
 
 ## Testing
 
 Unit tests are conducted using [Jest](https://jestjs.io/). Run all tests from project root using the following command:
 
-```
-$ npm t
+```bash
+npm test
 ```
 
 or just run a single test suite by specifying its name, e.g.:
 
-```
-$ npm t romanize.test.ts
+```bash
+npm test romanize.test.ts
 ```
 
 ## Issues

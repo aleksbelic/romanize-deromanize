@@ -46,6 +46,10 @@ export const romanize = (arabicNum: number | string): string => {
  * // returns 214
  */
 export const deromanize = (romanNum: string): number => {
+  if (typeof romanNum !== 'string') {
+    throw new Error('Input must be a string representing a Roman numeral');
+  }
+
   let arabicNum = 0;
   romanNum = romanNum.toString().replace(/\s+/g, '').toUpperCase();
 
